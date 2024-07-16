@@ -169,14 +169,19 @@ ax.set_ylim(y_max, y_min) # y-axis is flipped
 ax.set_xlabel('Differential stress (MPa)')
 ax.set_ylabel('Depth (km)')
 
+# fill the entire plot with white background first
+ax.fill_betweenx(depth_km, x_min, x_max, where=(depth_km >= 0), color='#fff', alpha=1)
+
+# shade the layers
 ax.fill_betweenx(depth_km, x_min, x_max, where=(depth_km < 20), color='#222e63', alpha=0.2, label='Upper crust')
 ax.fill_betweenx(depth_km, x_min, x_max, where=((depth_km >= 20) & (depth_km < 40)), color='#6c2f92', alpha=0.2, label='Lower crust')
 ax.fill_betweenx(depth_km, x_min, x_max, where=((depth_km >= 40) & (depth_km < 120)), color='#8d2542', alpha=0.2, label='Mantle lithosphere')
 ax.fill_betweenx(depth_km, x_min, x_max, where=((depth_km > 120)), color='#fac351', alpha=0.2, label='Asthenosphere')
 
 ax.legend(loc='lower right')
+
 ax.set_title('Yield strength envelope', fontweight="bold", fontsize=14)
 
 plt.tight_layout()
-plt.savefig('Yield strength envelope.png', dpi=300, transparent=True)
+plt.savefig('py/Yield strength envelope.png', dpi=300, transparent=True)
 plt.show()

@@ -4,4 +4,4 @@ This is repository of the ASPECT parameters and Python scripts used for the init
 
 The [overview.xlsx]() provides a list of tested models and calculations for the initial geotherm and material constant under various strength parameters $(f)$.
 
-The initial continental geotherm and yield strength envelope are stored in [/py](https://github.com/alanjyu/fragment_recipe/tree/main/py). The ASPECT input parameter file for the reference model is stored in [/prm](https://github.com/alanjyu/fragment_recipe/tree/main/prm).
+The Python scripts used to calculate initial continental geotherm and yield strength envelope are stored in [/py](https://github.com/alanjyu/fragment_recipe/tree/main/py). The pvPython script used to detect continental fragments and analyze their widths is stored in [/pvpy](https://github.com/alanjyu/fragment_recipe/tree/main/pvpy). The ASPECT input parameter file for the reference model is stored in [/prm](https://github.com/alanjyu/fragment_recipe/tree/main/prm).

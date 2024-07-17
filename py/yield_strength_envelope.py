@@ -183,5 +183,5 @@ ax.legend(loc='lower right')
 ax.set_title('Yield strength envelope', fontweight="bold", fontsize=14)
 
 plt.tight_layout()
-plt.savefig('py.Yield strength envelope.png', dpi=300, transparent=True)
+plt.savefig('py/Yield strength envelope.png', dpi=300, transparent=True)
 plt.show()

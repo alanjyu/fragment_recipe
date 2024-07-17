@@ -25,7 +25,7 @@ START_TIME, END_TIME = 25, 120
 ############################################################################################################
 
 
-def process_timestep(i, j, model, step):
+def detect_breakup(i, j, model, step):
     """
     Load the ASPECT .pvtu file and check for CONTINENTAL_BREAKUP.
     """
@@ -173,7 +173,7 @@ if not OVERWRITE_SAVED_PROGRESS:
     for i, model in enumerate(unprocessed_models):
         CONTINENTAL_BREAKUP = False
         for j, step in enumerate(timesteps):
-            process_timestep(i, j, model, step)
+            detect_breakup(i, j, model, step)
 
         output_data.append([model, fragment_sizes[i], breakup_times[i]])
 elif OVERWRITE_SAVED_PROGRESS:
@@ -184,7 +184,7 @@ elif OVERWRITE_SAVED_PROGRESS:
     for i, model in enumerate(detected_models):
         CONTINENTAL_BREAKUP = False
         for j, step in enumerate(timesteps):
-            process_timestep(i, j, model, step)
+            detect_breakup(i, j, model, step)
 
         output_data.append([model, fragment_sizes[i], breakup_times[i]])
 

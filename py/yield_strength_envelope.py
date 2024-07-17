@@ -75,8 +75,10 @@ def disl_power_law(eps, n, A, Q, P, V, T):
     eps : strain rate in s^(-1)
     n : stress exponent
     A : material constant in P^(-n) s^(-1)
-    Q : activation energy [i mol*^(-1)]
-    T : temperature [K]
+    Q : activation energy in J mol^(-1)
+    P : pressure in Pa
+    V : activation volume in m^3 mol^(-1)
+    T : temperature in K
     """
 
     disl_stress_diff = (eps / A)**(1 / n) * np.exp((Q + P*V) / (n * R * T))
@@ -87,13 +89,13 @@ def diff_power_law(eps, d, m, A, Q, P, V, T):
     """
     calculate diffusion power law creep
     eps : strain rate in s^(-1)
-    d : grain size
+    d : grain size in m
     m : grain size exponent
     A : material constant in Pa^(-1) s^(-1)
     Q : activation energy in J mol^(-1)
-    P : pressure [Pa]
-    V : activation volume 
-    T : temperature [K]
+    P : pressure in Pa
+    V : activation volume in m^3 mol^(-1)
+    T : temperature in K
     """
 
     diff_stress_diff = (eps / A) * np.exp((Q + P*V) / (R * T)) * d**(m)
@@ -104,7 +106,7 @@ def diff_power_law(eps, d, m, A, Q, P, V, T):
 data = np.genfromtxt('geotherm.csv', delimiter=',', skip_header=1)
 depth_km = data[:, 0]
 depth = depth_km * 1.e3 # depth in m
-temp = data[:, 1] # temperature in K
+temp = data[:, 1] # geotherm in K
 
 plastic_diff_stress = np.zeros(len(depth_km)) # differential stress for plastic deformation
 disl_diff_stress = np.zeros(len(depth_km)) # differential stress for dislocation creep
@@ -143,6 +145,7 @@ for i, d in enumerate(depth):
         disl_diff_stress[i] = disl_power_law(epsilon, astheno_disl_n, astheno_disl_A, astheno_disl_Q, pressure[i], astheno_disl_V, temp[i])
         diff_diff_stress[i] = diff_power_law(epsilon, grain_size, astheno_diff_m, astheno_diff_A, astheno_diff_Q, pressure[i], astheno_diff_V, temp[i])
 
+# take the minimum value of all three mechanisms for each depth
 min_diff_stress = np.minimum.reduce([plastic_diff_stress, disl_diff_stress, diff_diff_stress])
 
 
@@ -170,13 +173,13 @@ ax.set_xlabel('Differential stress (MPa)')
 ax.set_ylabel('Depth (km)')
 
 # fill the entire plot with white background first
-ax.fill_betweenx(depth_km, x_min, x_max, where=(depth_km >= 0), color='#fff', alpha=1)
+ax.fill_betweenx(depth_km, x_min, x_max, where=(depth_km >= x_min), color='#fff', alpha=1)
 
 # shade the layers
-ax.fill_betweenx(depth_km, x_min, x_max, where=(depth_km < 20), color='#222e63', alpha=0.2, label='Upper crust')
-ax.fill_betweenx(depth_km, x_min, x_max, where=((depth_km >= 20) & (depth_km < 40)), color='#6c2f92', alpha=0.2, label='Lower crust')
-ax.fill_betweenx(depth_km, x_min, x_max, where=((depth_km >= 40) & (depth_km < 120)), color='#8d2542', alpha=0.2, label='Mantle lithosphere')
-ax.fill_betweenx(depth_km, x_min, x_max, where=((depth_km > 120)), color='#fac351', alpha=0.2, label='Asthenosphere')
+ax.fill_betweenx(depth_km, x_min, x_max, where=(depth_km < upper/1e3), color='#222e63', alpha=0.2, label='Upper crust')
+ax.fill_betweenx(depth_km, x_min, x_max, where=(depth_km >= upper/1e3) & (depth_km < (upper+lower)/1e3), color='#6c2f92', alpha=0.2, label='Lower crust')
+ax.fill_betweenx(depth_km, x_min, x_max, where=(depth_km >= (upper+lower)/1e3 & depth_km < (upper+lower+mantle)/1e3), color='#8d2542', alpha=0.2, label='Mantle lithosphere')
+ax.fill_betweenx(depth_km, x_min, x_max, where=(depth_km > (upper+lower+mantle)/1e3), color='#fac351', alpha=0.2, label='Asthenosphere')
 
 ax.legend(loc='lower right')
 

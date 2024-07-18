@@ -15,7 +15,7 @@ lower_rho = 2900 # lower crust density in kg m^(-3)
 mantle_rho = 3250 # mantle lithosphere density in kg m^(-3)
 astheno_rho = 3300 # asthenosphere density in kg m^(-3)
 
-g = 9.81 # gravitational acceleration in m
+g = 9.81 # gravitational acceleration in m s^(-2)
 R = 8.3144626 # ideal gas constant in J mol^(-1) K^(-1)
 
 epsilon = 1.e-15 # reference strain rate in s^(-1)

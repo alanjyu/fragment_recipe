@@ -55,7 +55,7 @@ def calculate_geotherm(_q1, _q2, _q3, _q4, d):
 temp = np.array([calculate_geotherm(q1, q2, q3, q4, d) for d in depth])
 
 
-depth_km = (height-depth) / 1e3 # convert depth to kilometers for the plot
+depth_km = (height-depth) / 1e3 # convert depth to km for the plot
 data = np.column_stack((depth_km, temp))
 np.savetxt('geotherm.csv', data, delimiter=',', header='Depth (km), Temperature (K)', comments='')
 

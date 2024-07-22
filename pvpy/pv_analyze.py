@@ -18,7 +18,7 @@ paraview.simple._DisableFirstRenderCameraReset()
 ################################################# SETTINGS #################################################
 ROOT_PATH = f'--' # change this to the ASPECT output folder
 OUTPUT_PATH = f'--' # change this to your desired output folder
-OUTPUT_NAME = r'results.csv'
+OUTPUT_NAME = r'results.csv' # the script outputs the results after analyzing each model
 
 OVERWRITE_SAVED_PROGRESS = True # set this to false if you want checkpoints
 START_TIME, END_TIME = 25, 120
@@ -41,7 +41,7 @@ def detect_breakup(i, j, model, step):
             FileName=path, registrationName=f'{model}_{step}')
 
         if not CONTINENTAL_BREAKUP:
-            # see if mantle has risen to the surface
+            # detect if any asthenosphere has risen to the surface
             # query 1: astheno > 0.001
             # query 2: T is min (273K)
             SetActiveSource(src)
@@ -74,7 +74,7 @@ def get_fragment_width(i, j, model, step, src):
     """
     Calculate the difference of x_min and x_max of the fragment selection.
     """
-    # select the surficial points of the terrane
+    # select the surficial points of the fragment (terrane)
     SetActiveSource(src)  
 
     # Query 1: upper_2 >= 0.5

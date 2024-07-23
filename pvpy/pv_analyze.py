@@ -41,12 +41,12 @@ def detect_breakup(i, j, model, step):
             FileName=path, registrationName=f'{model}_{step}')
 
         if not CONTINENTAL_BREAKUP:
-            # detect if any asthenosphere has risen to the surface
-            # query 1: astheno > 0.001
-            # query 2: T is min (273K)
+            # detect if any rocks of the asthenosphere has risen to the surface
+            # query 1: composition of astheno >= 0.001
+            # query 2: min T (273K)
             SetActiveSource(src)
 
-            QuerySelect(QueryString='(astheno > 0.001) & (T == min(T))',
+            QuerySelect(QueryString='(astheno >= 0.001) & (T == min(T))',
                         FieldType='POINT', InsideOut=0)
 
             ast = ExtractSelection(registrationName=f'{model}_{step}_ast')
@@ -77,8 +77,8 @@ def get_fragment_width(i, j, model, step, src):
     # select the surficial points of the fragment (terrane)
     SetActiveSource(src)  
 
-    # Query 1: upper_2 >= 0.5
-    # Query 2: T is min (273K)
+    # Query 1: composition of upper_2 >= 0.5
+    # Query 2: min T (273K)
     # Query 3: horizontal velocity > 0
     QuerySelect(
         QueryString='(upper_2 >= 0.5) & (T == min(T)) & (velocity[:,0] > 0)', FieldType='POINT', InsideOut=0)

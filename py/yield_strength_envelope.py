@@ -25,24 +25,24 @@ phi = np.radians(30) # internal angle of friction
 
 # dislocation creep parameters
 upper_disl_n = 4 # stress exponent of upper crust
-upper_disl_A = 8.57e-28 # material constant of upper crust
-upper_disl_Q = 223.e3 # activation energy of upper crust
-upper_disl_V = 0 # activation volume of upper crust
+upper_disl_A = 8.57e-28 # material constant of upper crust in P^(-n) s^(-1)
+upper_disl_Q = 223.e3 # activation energy of upper crust in J mol^(-1)
+upper_disl_V = 0 # activation volume of upper crust in m^3 mol^(-1)
 
 lower_disl_n = 3 # stress exponent of lower crust
-lower_disl_A = 7.13e-18 # material constant of lower crust
-lower_disl_Q = 345.e3 # activation energy of lower crust
-lower_disl_V = 0 # activation volume of lower crust
+lower_disl_A = 7.13e-18 # material constant of lower crust in P^(-n) s^(-1)
+lower_disl_Q = 345.e3 # activation energy of lower crust in J mol^(-1)
+lower_disl_V = 0 # activation volume of lower crust in m^3 mol^(-1)
 
 mantle_disl_n = 3.5 # stress exponent of mantle lithosphere
-mantle_disl_A = 6.52e-16 # material constant of mantle lithosphere
-mantle_disl_Q = 530.e3 # activation energy of mantle lithosphere
-mantle_disl_V = 18.e-6 # activation volume of mantle lithosphere
+mantle_disl_A = 6.52e-16 # material constant of mantle lithosphere in P^(-n) s^(-1)
+mantle_disl_Q = 530.e3 # activation energy of mantle lithosphere in J mol^(-1)
+mantle_disl_V = 18.e-6 # activation volume of mantle lithosphere in m^3 mol^(-1)
 
 astheno_disl_n = 3.5 # stress exponent of asthenosphere
-astheno_disl_A = 5.33e-19 # material constant of asthenosphere
-astheno_disl_Q = 480.e3 # activation energy of asthenosphere
-astheno_disl_V = 11.e-6 # activation volume of asthenosphere
+astheno_disl_A = 5.33e-19 # material constant of asthenosphere in P^(-n) s^(-1)
+astheno_disl_Q = 480.e3 # activation energy of asthenosphere in J mol^(-1)
+astheno_disl_V = 11.e-6 # activation volume of asthenosphere in m^3 mol^(-1)
 
 
 # diffusion creep parameters

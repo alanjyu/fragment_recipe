@@ -1,4 +1,4 @@
-# Supplementary material for "A recipe for continental fragment formation: big data analysis of rift models"
+# Supplementary material for "A recipe for exotic continental fragment formation: automated data analysis of rift models"
 
 This is repository of the ASPECT parameters and Python scripts used for the initial model setup. 
 

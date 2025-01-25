@@ -20,9 +20,15 @@ ParaView is equipped with powerful visualization and data filtering tools. One o
 
 To use this feature in ParaView:
 
-1. Navigate to **Tools** → **Start Trace**. You can skip rendering components if camera adjustments are unnecessary.
+1. Navigate to **Tools** → **Start Trace**.
+    * You can skip rendering components if camera adjustments are unnecessary.
+
 2. Perform your desired analytical procedures on a single output file.
+    * To select and extract data, click **View** → **Find Data**, a data selection window will pop up, in which you can choose the field and variable.
+    * In **Filters**, you can choose a method to filter your data. Note that ParaView does not output explicit coordinate attributes. To do so, use **Append Location Attributes**.
+
 3. Once done, go to **Tools** → **Stop Trace**. This will generate Python code capturing your workflow.
+
 4. Implement a For loop to automate the process for all your output files. An example of this implementation is shown in [pv_analyze.py](https://github.com/alanjyu/fragment_recipe/blob/main/pvpy/pv_analyze.py).
 
 

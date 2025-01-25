@@ -9,6 +9,7 @@ The Python scripts used to calculate the initial geotherm and yield strength of 
 
 ## Tested environment
 
+- ASPECT 2.4.0
 - ParaView 5.11
 - Python 3.9
 

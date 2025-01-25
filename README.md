@@ -24,7 +24,7 @@ To use this feature in ParaView:
     * You can skip rendering components if camera adjustments are unnecessary.
 
 2. Perform your desired analytical procedures on a single output file.
-    * To select and extract data, click **View** → **Find Data**, a data selection window will pop up, in which you can choose the field and variable.
+    * To select and extract data, click **View** → **Find Data**. a data selection window will pop up, in which you can choose the field and variable.
     * In **Filters**, you can choose a method to filter your data. Note that ParaView does not output explicit coordinate attributes. To do so, use **Append Location Attributes**.
 
 3. Once done, go to **Tools** → **Stop Trace**. This will generate Python code capturing your workflow.

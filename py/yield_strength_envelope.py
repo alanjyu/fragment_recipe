@@ -48,13 +48,13 @@ astheno_disl_V = 11.e-6 # activation volume of asthenosphere in m^3 mol^(-1)
 # diffusion creep parameters
 grain_size = 5.e-3 # grain size in m
 
-upper_diff_A = 5.97e-19
-upper_diff_Q = 223.e3
+upper_diff_A = 1.50e-50
+upper_diff_Q = 0
 upper_diff_V = 0
-upper_diff_m = 3 # grain size exponent of upper crust
+upper_diff_m = 0 # grain size exponent of upper crust
 
-lower_diff_A = 2.99e-25
-lower_diff_Q = 159.e3
+lower_diff_A = 1.50e-50
+lower_diff_Q = 0
 lower_diff_V = 0
 lower_diff_m = 2 # grain size exponent of lower crust
 

@@ -1,5 +1,7 @@
 # Supplementary material for "A recipe for exotic continental fragment formation: automated data analysis of rift models"
 
+[![DOI](https://zenodo.org/badge/813259085.svg)](https://doi.org/10.5281/zenodo.14847235)
+
 This is a repository of the ASPECT input parameter files and Python scripts used for the initial model setup and model analysis. 
 
 The [overview.xlsx](https://github.com/alanjyu/fragment_recipe/blob/main/overview.xlsx) provides a list of tested models and their indices, as well as calculations for the initial geotherm and material constant under various strength parameters ($f$).

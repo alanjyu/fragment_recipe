@@ -21,7 +21,7 @@ OUTPUT_PATH = f'--' # change this to your desired output folder
 OUTPUT_NAME = r'results.csv' # the script outputs the results after analyzing each model
 
 OVERWRITE_SAVED_PROGRESS = True # set this to false if you want checkpoints
-START_TIME, END_TIME = 25, 120
+START_TIME, END_TIME = 25, 120 # interval of start and end timestep to check
 ############################################################################################################
 
 

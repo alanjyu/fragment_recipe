@@ -1,4 +1,4 @@
-# Supplementary material for "A recipe for exotic continental fragment formation: automated data analysis of rift models"
+# Supplementary material for "A recipe for exotic continental fragment formation: key constraints from numerical rift models"
 
 [![DOI](https://zenodo.org/badge/813259085.svg)](https://doi.org/10.5281/zenodo.14847235)
 

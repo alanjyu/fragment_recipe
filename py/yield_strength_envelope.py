@@ -178,7 +178,7 @@ ax.fill_betweenx(depth_km, x_min, x_max, where=(depth_km >= x_min), color='#fff'
 # shade the layers
 ax.fill_betweenx(depth_km, x_min, x_max, where=(depth_km < upper/1e3), color='#222e63', alpha=0.2, label='Upper crust')
 ax.fill_betweenx(depth_km, x_min, x_max, where=(depth_km >= upper/1e3) & (depth_km < (upper+lower)/1e3), color='#6c2f92', alpha=0.2, label='Lower crust')
-ax.fill_betweenx(depth_km, x_min, x_max, where=(depth_km >= (upper+lower)/1e3 & depth_km < (upper+lower+mantle)/1e3), color='#8d2542', alpha=0.2, label='Mantle lithosphere')
+ax.fill_betweenx(depth_km, x_min, x_max, where=(depth_km >= (upper+lower)/1e3) & (depth_km < (upper+lower+mantle)/1e3), color='#8d2542', alpha=0.2, label='Mantle lithosphere')
 ax.fill_betweenx(depth_km, x_min, x_max, where=(depth_km > (upper+lower+mantle)/1e3), color='#fac351', alpha=0.2, label='Asthenosphere')
 
 ax.legend(loc='lower right')
@@ -186,5 +186,6 @@ ax.legend(loc='lower right')
 ax.set_title('Yield strength envelope', fontweight="bold", fontsize=14)
 
 plt.tight_layout()
-plt.savefig('py/Yield strength envelope.png', dpi=300, transparent=True)
+plt.savefig('Yield strength envelope.png', dpi=300, transparent=True)
 plt.show()
+

@@ -112,5 +112,6 @@ ax.fill_betweenx(depth_km, min(temp), max(temp), where=(depth_km > (upper+lower+
 ax.legend(loc='lower left')
 
 plt.tight_layout()
-plt.savefig('py/Initial continental geotherm.png', dpi=300, transparent=True)
+plt.savefig('Initial continental geotherm.png', dpi=300, transparent=True)
 plt.show()
+
